@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="24"
+   height="24"
+   viewBox="0 0 6.3499999 6.35"
+   version="1.1"
+   id="svg321"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="geocoder.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview323"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="23.661055"
+     inkscape:cx="7.3749881"
+     inkscape:cy="12.996039"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs318" />
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#6c2c2d;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-opacity:1"
+       id="rect11361-5-0"
+       width="6.3499999"
+       height="6.3499999"
+       x="5.4916505e-08"
+       y="2.1390376e-09"
+       ry="1.7539314" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.999999"
+       d="M 1.3997739,5.3002725 C 1.3486933,5.2857895 1.2860127,5.2440354 1.2420271,5.1951174 1.1194645,5.0588205 1.1124109,4.8983204 1.2205961,4.7083065 1.2422351,4.6703615 1.3673569,4.5328109 1.7012127,4.1800666 2.0965007,3.7624076 2.1526063,3.7000204 2.1526063,3.6780845 c 0,-0.01447 -0.024448,-0.076082 -0.057844,-0.1458758 C 1.9779331,3.2881423 1.9258953,3.0778792 1.9169171,2.8136515 1.9075541,2.5259586 1.9554097,2.2812508 2.0726041,2.0236458 2.3123611,1.4967919 2.7637859,1.1463777 3.3235205,1.0526386 c 0.1124922,-0.018835 0.361529,-0.018782 0.4780056,1.085e-4 0.3584286,0.058132 0.6730382,0.224774 0.9250088,0.4899452 0.2519601,0.2651698 0.4103104,0.596279 0.4655422,0.9734939 0.017894,0.122581 0.017998,0.3846702 9.36e-5,0.5030574 C 5.1031175,3.6083254 4.7701355,4.0834175 4.2695235,4.3357357 4.0247519,4.4591067 3.7922253,4.5098587 3.5188653,4.4995814 3.2677999,4.4901436 3.0680023,4.4353758 2.8360999,4.3124172 2.7698303,4.2772585 2.7112383,4.2515465 2.6974953,4.2515465 c -0.02091,0 -0.080106,0.059042 -0.476986,0.4750512 C 1.7654747,5.2035955 1.7314659,5.2357818 1.6391461,5.2767815 1.5583115,5.3126836 1.4730659,5.3210473 1.3997323,5.3002699 Z M 3.7018093,4.0422408 C 3.9793411,4.006492 4.2306355,3.8778479 4.4222351,3.6734396 4.5317101,3.5566484 4.5887417,3.473013 4.6547721,3.3324295 4.8245349,2.9709769 4.8191459,2.5336759 4.6405195,2.1755182 4.2913393,1.4754558 3.4298225,1.2709376 2.8278501,1.7452055 2.6586282,1.878523 2.5103379,2.0827512 2.4312201,2.2914241 c -0.2375307,0.6265281 0.01987,1.3276503 0.599174,1.6322029 0.1918804,0.1008665 0.4521946,0.1468529 0.671436,0.1186138 z"
+       id="path3799"
+       sodipodi:nodetypes="cssssssssssscssssssccssscsssss" />
+  </g>
+</svg>
