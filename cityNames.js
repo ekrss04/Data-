@@ -1,3 +1,6 @@
+// Файл: cityNames.js
+// Маркер с меняющимся SVG изображением
+
 // Функция определения какой SVG показывать в зависимости от года
 function getCitySvgByYear(currentTime) {
     const date = Cesium.JulianDate.toDate(currentTime);
@@ -13,7 +16,12 @@ function getCitySvgByYear(currentTime) {
 }
 
 // Функция добавления маркера
-function addCityNameMarker() {
+function addCityNameMarker(viewer) {
+    if (!viewer) {
+        console.error('Viewer не передан в addCityNameMarker');
+        return;
+    }
+    
     const longitude = 85.891825054503002;
     const latitude = 51.977554608212493;
     
@@ -22,17 +30,17 @@ function addCityNameMarker() {
         position: Cesium.Cartesian3.fromDegrees(longitude, latitude, 0),
         billboard: {
             image: getCitySvgByYear(viewer.clock.currentTime),
-            width: 50,           // Размер иконки (как обычный маркер)
-            height: 50,          // Размер иконки (как обычный маркер)
-            verticalOrigin: Cesium.VerticalOrigin.CENTER,  // Центрируем по точке
+            width: 120,
+            height: 40,
+            verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
             horizontalOrigin: Cesium.HorizontalOrigin.CENTER,
             scale: 1.0,
-            pixelOffset: new Cesium.Cartesian2(0, 0),  // Без смещения
-            disableDepthTestDistance: Number.POSITIVE_INFINITY, // Всегда видно
-            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5000) // Виден до 5 км
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 10000)
         }
     });
     
+    // Обновляем маркер при изменении времени
     viewer.clock.onTick.addEventListener(function(clock) {
         const newImage = getCitySvgByYear(clock.currentTime);
         if (markerEntity.billboard.image !== newImage) {
@@ -40,8 +48,8 @@ function addCityNameMarker() {
         }
     });
     
-    console.log("✅ Точечный маркер с SVG добавлен");
+    console.log("✅ Маркер с SVG добавлен (120x40)");
 }
 
-// В основном коде вызовите:
-// addCityNameMarker();
+// Делаем функцию глобальной
+window.addCityNameMarker = addCityNameMarker;
