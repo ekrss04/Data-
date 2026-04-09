@@ -19,17 +19,17 @@ function addCityNameMarker() {
     
     const markerEntity = viewer.entities.add({
         name: 'city_name_marker',
-        position: Cesium.Cartesian3.fromDegrees(longitude, latitude, 0), // Высота 0 - привязан к земле
+        position: Cesium.Cartesian3.fromDegrees(longitude, latitude, 0),
         billboard: {
             image: getCitySvgByYear(viewer.clock.currentTime),
-            width: 120,          // Уменьшенный размер
-            height: 40,          // Уменьшенный размер
-            verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+            width: 50,           // Размер иконки (как обычный маркер)
+            height: 50,          // Размер иконки (как обычный маркер)
+            verticalOrigin: Cesium.VerticalOrigin.CENTER,  // Центрируем по точке
             horizontalOrigin: Cesium.HorizontalOrigin.CENTER,
             scale: 1.0,
-            // Убираем disableDepthTestDistance - маркер будет нормально масштабироваться
-            // Добавляем расстояние видимости (опционально)
-            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 10000) // Виден от 0 до 10 км
+            pixelOffset: new Cesium.Cartesian2(0, 0),  // Без смещения
+            disableDepthTestDistance: Number.POSITIVE_INFINITY, // Всегда видно
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5000) // Виден до 5 км
         }
     });
     
@@ -40,5 +40,8 @@ function addCityNameMarker() {
         }
     });
     
-    console.log("✅ Маркер с SVG добавлен (привязан к земле, постоянный размер)");
+    console.log("✅ Точечный маркер с SVG добавлен");
 }
+
+// В основном коде вызовите:
+// addCityNameMarker();
