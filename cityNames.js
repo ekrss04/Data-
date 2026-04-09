@@ -1,12 +1,8 @@
-// Файл: cityNames.js
-// Простой маркер с меняющимся SVG изображением (без текстовой надписи)
-
 // Функция определения какой SVG показывать в зависимости от года
 function getCitySvgByYear(currentTime) {
     const date = Cesium.JulianDate.toDate(currentTime);
     const year = date.getUTCFullYear();
     
-    // Определяем период по году
     if (year < 1932) {
         return 'https://raw.githubusercontent.com/ekrss04/Data-/main/visual/Улала.svg';
     } else if (year >= 1932 && year < 1948) {
@@ -16,33 +12,27 @@ function getCitySvgByYear(currentTime) {
     }
 }
 
-// Основная функция добавления маркера
-function addCityNameMarker(viewer) {
-    if (!viewer) {
-        console.error('Viewer не передан в addCityNameMarker');
-        return;
-    }
-    
-    // Координаты для маркера (гора, где находится надпись)
+// Функция добавления маркера
+function addCityNameMarker() {
     const longitude = 85.891825054503002;
     const latitude = 51.977554608212493;
     
-    // Создаем маркер, который будет менять изображение в зависимости от времени
     const markerEntity = viewer.entities.add({
         name: 'city_name_marker',
-        position: Cesium.Cartesian3.fromDegrees(longitude, latitude, 80),
+        position: Cesium.Cartesian3.fromDegrees(longitude, latitude, 0), // Высота 0 - привязан к земле
         billboard: {
             image: getCitySvgByYear(viewer.clock.currentTime),
-            width: 300,
-            height: 100,
+            width: 120,          // Уменьшенный размер
+            height: 40,          // Уменьшенный размер
             verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
             horizontalOrigin: Cesium.HorizontalOrigin.CENTER,
             scale: 1.0,
-            disableDepthTestDistance: Number.POSITIVE_INFINITY
+            // Убираем disableDepthTestDistance - маркер будет нормально масштабироваться
+            // Добавляем расстояние видимости (опционально)
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 10000) // Виден от 0 до 10 км
         }
     });
     
-    // Обновляем маркер при изменении времени
     viewer.clock.onTick.addEventListener(function(clock) {
         const newImage = getCitySvgByYear(clock.currentTime);
         if (markerEntity.billboard.image !== newImage) {
@@ -50,10 +40,5 @@ function addCityNameMarker(viewer) {
         }
     });
     
-    console.log("✅ Маркер с SVG добавлен");
-}
-
-// Экспортируем функцию для использования
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { addCityNameMarker };
+    console.log("✅ Маркер с SVG добавлен (привязан к земле, постоянный размер)");
 }
